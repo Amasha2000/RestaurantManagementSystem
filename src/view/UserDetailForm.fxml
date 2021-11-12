@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1623.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UserDetailFormController">
+   <children>
+      <JFXButton fx:id="btnAddUser" alignment="CENTER" buttonType="RAISED" layoutX="120.0" layoutY="623.0" onAction="#addUserOnAction" prefHeight="68.0" prefWidth="302.0" ripplerFill="#dbddd9" style="-fx-background-color: #10ac84;" text="Add New User" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="25.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label alignment="CENTER" layoutY="-1.0" prefHeight="90.0" prefWidth="1631.0" style="-fx-background-color: #540775;" text="Manage User Details" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="41.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnUpdateUser" buttonType="RAISED" layoutX="124.0" layoutY="744.0" onAction="#updateUserOnAction" prefHeight="68.0" prefWidth="291.0" style="-fx-background-color: #341f97;" text="Update User Details" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="25.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <TableView fx:id="tblUser" layoutX="575.0" layoutY="272.0" prefHeight="757.0" prefWidth="1014.0" stylesheets="@../assets/style/Style.css">
+         <columns>
+            <TableColumn fx:id="colUserId" prefWidth="201.0" text="User Id" />
+            <TableColumn fx:id="colUserName" prefWidth="320.0" text="User Name" />
+            <TableColumn fx:id="colPassword" prefWidth="322.0" text="Password" />
+            <TableColumn fx:id="colDelete" prefWidth="170.0" text="Delete" />
+         </columns>
+      </TableView>
+      <AnchorPane layoutX="103.0" layoutY="167.0" prefHeight="68.0" prefWidth="383.0" style="-fx-border-width: 2; -fx-border-color: #273c75; -fx-border-radius: 8;">
+         <children>
+            <JFXTextField fx:id="txtUserId" alignment="CENTER" focusColor="WHITE" labelFloat="true" layoutX="13.0" layoutY="22.0" onKeyReleased="#tableCodeKeyReleased" prefHeight="38.0" prefWidth="361.0" unFocusColor="#ccc9c9">
+               <font>
+                  <Font name="Times New Roman Bold" size="21.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="27.0" layoutY="-12.0" prefHeight="23.0" prefWidth="66.0" style="-fx-background-color: #ffffff;" text="User Id" textFill="#2131a8">
+               <font>
+                  <Font name="Calibri Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="103.0" layoutY="297.0" prefHeight="68.0" prefWidth="383.0" style="-fx-border-width: 2; -fx-border-color: #273c75; -fx-border-radius: 8;">
+         <children>
+            <JFXTextField fx:id="txtName" alignment="CENTER" focusColor="WHITE" labelFloat="true" layoutX="13.0" layoutY="23.0" onKeyReleased="#tableCodeKeyReleased" prefHeight="38.0" prefWidth="361.0" unFocusColor="#ccc9c9">
+               <font>
+                  <Font name="Times New Roman Bold" size="21.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="24.0" layoutY="-12.0" prefHeight="23.0" prefWidth="97.0" style="-fx-background-color: #ffffff;" text="User Name" textFill="#2131a8">
+               <font>
+                  <Font name="Calibri Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="103.0" layoutY="438.0" prefHeight="68.0" prefWidth="383.0" style="-fx-border-width: 2; -fx-border-color: #273c75; -fx-border-radius: 8;">
+         <children>
+            <JFXTextField fx:id="txtPassword" alignment="CENTER" focusColor="WHITE" labelFloat="true" layoutX="12.0" layoutY="23.0" onKeyReleased="#tableCodeKeyReleased" prefHeight="38.0" prefWidth="361.0" unFocusColor="#ccc9c9">
+               <font>
+                  <Font name="Times New Roman Bold" size="21.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="23.0" layoutY="-14.0" prefHeight="23.0" prefWidth="89.0" style="-fx-background-color: #ffffff;" text="Password" textFill="#2131a8">
+               <font>
+                  <Font name="Calibri Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="575.0" layoutY="163.0" prefHeight="76.0" prefWidth="346.0" style="-fx-border-width: 2; -fx-border-color: #273c75; -fx-border-radius: 8;">
+         <children>
+            <JFXTextField fx:id="txtSearch" alignment="CENTER" focusColor="#613abc" labelFloat="true" layoutX="15.0" layoutY="30.0" onKeyReleased="#searchOnAction" prefHeight="38.0" prefWidth="313.0" promptText="Enter User Id To Search" unFocusColor="#ccc9c9">
+               <font>
+                  <Font name="Calibri Bold" size="20.0" />
+               </font>
+            </JFXTextField>
+            <Label alignment="CENTER" layoutX="129.0" layoutY="-11.0" prefHeight="23.0" prefWidth="75.0" style="-fx-background-color: #ffffff;" text="Search" textFill="#2131a8">
+               <font>
+                  <Font name="Calibri Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <FontAwesomeIcon fill="WHITE" glyphName="PENCIL" layoutX="595.0" layoutY="56.0" size="2em" />
+      <JFXButton fx:id="changeAdminLogInDetails" buttonType="RAISED" layoutX="85.0" layoutY="932.0" onAction="#changeAdminLogInOnAction" prefHeight="68.0" prefWidth="408.0" style="-fx-background-color: #34ace0;" text="Change Admin User Name or Password" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="23.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <FontAwesomeIcon glyphName="USERS" layoutX="1475.0" layoutY="222.0" size="4em" />
+      <Separator layoutX="15.0" layoutY="46.0" prefHeight="0.0" prefWidth="546.0" />
+      <Separator layoutX="1014.0" layoutY="45.0" prefHeight="3.0" prefWidth="588.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1623.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EmployeeDetailFormController">
+   <children>
+      <JFXButton fx:id="btnAddEmployee" alignment="CENTER" buttonType="RAISED" layoutX="110.0" layoutY="839.0" onAction="#addEmployeeOnAction" prefHeight="68.0" prefWidth="293.0" ripplerFill="#d4d7d9" style="-fx-background-color: #10ac84;" text="Add New Employee" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="22.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label alignment="CENTER" layoutX="-2.0" prefHeight="90.0" prefWidth="1631.0" style="-fx-background-color: #540775;" text="Manage Employee Details" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="41.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnUpdateEmployee" buttonType="RAISED" layoutX="110.0" layoutY="939.0" onAction="#updateEmployeeOnAction" prefHeight="68.0" prefWidth="293.0" style="-fx-background-color: #341f97;" text="Update Employee Details" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="22.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <TableView fx:id="tblEmployee" layoutX="515.0" layoutY="227.0" prefHeight="789.0" prefWidth="1093.0" stylesheets="@../assets/style/Style.css">
+         <columns>
+            <TableColumn fx:id="colEmployeeId" prefWidth="113.0" text="Employee Id" />
+            <TableColumn fx:id="colName" prefWidth="206.0" text="Name" />
+            <TableColumn fx:id="colAddress" minWidth="2.0" prefWidth="217.0" text="Address" />
+            <TableColumn fx:id="colPhoneNumber" minWidth="0.0" prefWidth="175.0" text="Phone Number" />
+            <TableColumn fx:id="colNIC" prefWidth="138.0" text="NIC" />
+            <TableColumn fx:id="colDescription" prefWidth="153.0" text="Employee Type" />
+            <TableColumn fx:id="colDelete" prefWidth="90.0" text="Delete" />
+         </columns>
+      </TableView>
+      <AnchorPane layoutX="21.0" layoutY="126.0" prefHeight="68.0" prefWidth="443.0" style="-fx-border-width: 2; -fx-border-color: #273c75; -fx-border-radius: 8;">
+         <children>
+            <JFXTextField fx:id="txtEmployeeId" alignment="CENTER" focusColor="WHITE" labelFloat="true" layoutX="13.0" layoutY="22.0" onKeyReleased="#tableCodeKeyReleased" prefHeight="38.0" prefWidth="417.0" unFocusColor="#ccc9c9">
+               <font>
+                  <Font name="Times New Roman Bold" size="21.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="27.0" layoutY="-12.0" prefHeight="23.0" prefWidth="108.0" style="-fx-background-color: #ffffff;" text="Employee Id" textFill="#2131a8">
+               <font>
+                  <Font name="Calibri Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="21.0" layoutY="240.0" prefHeight="68.0" prefWidth="443.0" style="-fx-border-width: 2; -fx-border-color: #273c75; -fx-border-radius: 8;">
+         <children>
+            <JFXTextField fx:id="txtName" alignment="CENTER" focusColor="WHITE" labelFloat="true" layoutX="14.0" layoutY="22.0" onKeyReleased="#tableCodeKeyReleased" prefHeight="38.0" prefWidth="417.0" unFocusColor="#ccc9c9">
+               <font>
+                  <Font name="Times New Roman Bold" size="21.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="24.0" layoutY="-12.0" prefHeight="23.0" prefWidth="89.0" style="-fx-background-color: #ffffff;" text="Full Name" textFill="#2131a8">
+               <font>
+                  <Font name="Calibri Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="21.0" layoutY="355.0" prefHeight="68.0" prefWidth="443.0" style="-fx-border-width: 2; -fx-border-color: #273c75; -fx-border-radius: 8;">
+         <children>
+            <JFXTextField fx:id="txtAddress" alignment="CENTER" focusColor="WHITE" labelFloat="true" layoutX="12.0" layoutY="23.0" onKeyReleased="#tableCodeKeyReleased" prefHeight="38.0" prefWidth="417.0" unFocusColor="#ccc9c9">
+               <font>
+                  <Font name="Times New Roman Bold" size="21.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="23.0" layoutY="-14.0" prefHeight="23.0" prefWidth="75.0" style="-fx-background-color: #ffffff;" text="Address" textFill="#2131a8">
+               <font>
+                  <Font name="Calibri Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="515.0" layoutY="122.0" prefHeight="76.0" prefWidth="346.0" style="-fx-border-width: 2; -fx-border-color: #273c75; -fx-border-radius: 8;">
+         <children>
+            <JFXTextField fx:id="txtSearch" alignment="CENTER" focusColor="#613abc" labelFloat="true" layoutX="15.0" layoutY="30.0" onKeyReleased="#searchOnAction" prefHeight="38.0" prefWidth="313.0" promptText="Enter Employee Id To Search" unFocusColor="#ccc9c9">
+               <font>
+                  <Font name="Calibri Bold" size="20.0" />
+               </font>
+            </JFXTextField>
+            <Label alignment="CENTER" layoutX="129.0" layoutY="-11.0" prefHeight="23.0" prefWidth="75.0" style="-fx-background-color: #ffffff;" text="Search" textFill="#2131a8">
+               <font>
+                  <Font name="Calibri Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <FontAwesomeIcon fill="WHITE" glyphName="PENCIL" layoutX="536.0" layoutY="55.0" size="2em" />
+      <AnchorPane layoutX="21.0" layoutY="472.0" prefHeight="68.0" prefWidth="443.0" style="-fx-border-width: 2; -fx-border-color: #273c75; -fx-border-radius: 8;">
+         <children>
+            <JFXTextField fx:id="txtPhoneNumber" alignment="CENTER" focusColor="WHITE" labelFloat="true" layoutX="13.0" layoutY="22.0" onKeyReleased="#tableCodeKeyReleased" prefHeight="38.0" prefWidth="417.0" unFocusColor="#ccc9c9">
+               <font>
+                  <Font name="Times New Roman Bold" size="21.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="27.0" layoutY="-12.0" prefHeight="23.0" prefWidth="134.0" style="-fx-background-color: #ffffff;" text="Phone Number" textFill="#2131a8">
+               <font>
+                  <Font name="Calibri Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="21.0" layoutY="588.0" prefHeight="68.0" prefWidth="443.0" style="-fx-border-width: 2; -fx-border-color: #273c75; -fx-border-radius: 8;">
+         <children>
+            <JFXTextField fx:id="txtNIC" alignment="CENTER" focusColor="WHITE" labelFloat="true" layoutX="13.0" layoutY="22.0" onKeyReleased="#tableCodeKeyReleased" prefHeight="38.0" prefWidth="423.0" unFocusColor="#ccc9c9">
+               <font>
+                  <Font name="Times New Roman Bold" size="21.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="27.0" layoutY="-12.0" prefHeight="23.0" prefWidth="40.0" style="-fx-background-color: #ffffff;" text="NIC" textFill="#2131a8">
+               <font>
+                  <Font name="Calibri Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="21.0" layoutY="706.0" prefHeight="68.0" prefWidth="443.0" style="-fx-border-width: 2; -fx-border-color: #273c75; -fx-border-radius: 8;">
+         <children>
+            <Label layoutX="27.0" layoutY="-12.0" prefHeight="23.0" prefWidth="134.0" style="-fx-background-color: #ffffff;" text="Employee Type" textFill="#2131a8">
+               <font>
+                  <Font name="Calibri Bold" size="20.0" />
+               </font>
+            </Label>
+            <JFXRadioButton fx:id="rdBtnCashier" layoutX="22.0" layoutY="24.0" text="Cashier">
+               <font>
+                  <Font name="Calibri Bold" size="20.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="toggleDescGroup" />
+               </toggleGroup>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="rdBtnChef" layoutX="181.0" layoutY="24.0" text="Chef" toggleGroup="$toggleDescGroup">
+               <font>
+                  <Font name="Calibri Bold" size="20.0" />
+               </font>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="rdBtnWaiter" layoutX="328.0" layoutY="24.0" text="Waiter" toggleGroup="$toggleDescGroup">
+               <font>
+                  <Font name="Calibri Bold" size="20.0" />
+               </font>
+            </JFXRadioButton>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="117.0" fitWidth="119.0" layoutX="1444.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/image3.png" />
+         </image>
+      </ImageView>
+      <Separator layoutX="1050.0" layoutY="48.0" prefHeight="0.0" prefWidth="558.0" />
+      <Separator layoutX="18.0" layoutY="47.0" prefHeight="3.0" prefWidth="497.0" />
+   </children>
+</AnchorPane>

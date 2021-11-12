@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="logInContext" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #3f243f;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LogInFormController">
+   <children>
+      <ImageView fitHeight="1262.0" fitWidth="1341.0" layoutX="658.0" layoutY="-74.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/image27.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="864.0" layoutY="181.0" opacity="0.89" prefHeight="699.0" prefWidth="948.0" style="-fx-background-color: white; -fx-background-radius: 50;">
+         <children>
+            <ImageView fx:id="hungryImage" fitHeight="124.0" fitWidth="245.0" layoutX="374.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/image1.png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="159.0" layoutY="168.0" prefHeight="92.0" prefWidth="661.0" style="-fx-border-width: 2; -fx-border-color: #273c75; -fx-border-radius: 8;">
+               <children>
+                  <Label layoutX="18.0" layoutY="-12.0" prefHeight="31.0" prefWidth="126.0" style="-fx-background-color: #ffffff;" text="User Name" textFill="#2131a8">
+                     <font>
+                        <Font name="Calibri Bold" size="26.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtName" alignment="CENTER" labelFloat="true" layoutX="17.0" layoutY="24.0" onKeyReleased="#codeReleased" prefHeight="54.0" prefWidth="635.0" unFocusColor="#e8e5e5">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </AnchorPane>
+            <FontAwesomeIcon fill="#57259d" glyphName="USER" layoutX="74.0" layoutY="230.0" size="3em" />
+            <AnchorPane layoutX="159.0" layoutY="358.0" prefHeight="92.0" prefWidth="661.0" style="-fx-border-width: 2; -fx-border-color: #273c75; -fx-border-radius: 8;">
+               <children>
+                  <Label layoutX="18.0" layoutY="-12.0" prefHeight="31.0" prefWidth="114.0" style="-fx-background-color: #ffffff;" text="Password" textFill="#2131a8">
+                     <font>
+                        <Font name="Calibri Bold" size="26.0" />
+                     </font>
+                  </Label>
+                  <JFXPasswordField fx:id="txtPassword" alignment="CENTER" layoutX="17.0" layoutY="24.0" onKeyReleased="#codeReleased" prefHeight="54.0" prefWidth="635.0" unFocusColor="#e8e5e5">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </JFXPasswordField>
+               </children>
+            </AnchorPane>
+            <FontAwesomeIcon fill="#57259d" glyphName="LOCK" layoutX="77.0" layoutY="420.0" size="3em" />
+            <JFXButton fx:id="btnCashier" buttonType="RAISED" layoutX="74.0" layoutY="542.0" onAction="#cashierLogInOnAction" prefHeight="64.0" prefWidth="284.0" ripplerFill="#cdcdd3" style="-fx-background-color: #1e3799;" text="Cashier Log In" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="27.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnManagement" buttonType="RAISED" layoutX="608.0" layoutY="542.0" onAction="#managementLogInOnAction" prefHeight="64.0" prefWidth="284.0" ripplerFill="#eaeaeb" style="-fx-background-color: #009432;" text="Management Log In" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="27.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <Label layoutX="160.0" layoutY="80.0" prefHeight="111.0" prefWidth="389.0" text="Welcome" textFill="#b3bfeb">
+         <font>
+            <Font name="System Bold" size="60.0" />
+         </font>
+      </Label>
+      <Label layoutX="261.0" layoutY="191.0" prefHeight="111.0" prefWidth="133.0" text="To" textFill="#b3bfeb">
+         <font>
+            <Font name="System Bold" size="60.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="302.0" prefHeight="111.0" prefWidth="635.0" text="Restaurant Management System" textFill="#b3bfeb">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="-3.0" layoutY="572.0" opacity="0.41" prefHeight="507.0" prefWidth="661.0" style="-fx-background-color: white; -fx-background-radius: 17;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="37.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/image10.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="122.0" layoutY="248.0" prefHeight="111.0" prefWidth="357.0" text="HUNGRY " textFill="#45c2c6">
+               <font>
+                  <Font name="System Bold" size="76.0" />
+               </font>
+            </Label>
+            <Label layoutX="382.0" layoutY="346.0" prefHeight="21.0" prefWidth="215.0" text="Restaurant" textFill="#1593c9">
+               <font>
+                  <Font name="System Bold" size="33.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

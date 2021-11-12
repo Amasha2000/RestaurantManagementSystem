@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MostMovableItemInChart" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="34ec259e-c506-4f15-99ae-4bc8321b1d51">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="jdbc"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[SELECT mealType AS Meal_Type,SUM(quantity) AS Quantity FROM orderdetail GROUP BY mealType ORDER BY quantity DESC;]]>
+	</queryString>
+	<field name="Meal_Type" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="mealType"/>
+		<property name="com.jaspersoft.studio.field.label" value="Meal_Type"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orderdetail"/>
+	</field>
+	<field name="Quantity" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Quantity"/>
+		<property name="com.jaspersoft.studio.field.label" value="Quantity"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="82" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="50" forecolor="#7D20B0" uuid="cb037099-77cc-4f1f-a8fe-a4f12a77a20a"/>
+				<textElement textAlignment="Center">
+					<font size="25" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pie Chart Of Most Movable Meal Types]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="50" width="555" height="1" forecolor="#C669DB" uuid="cd49485a-f738-469f-a92c-1501ecfaa8e2"/>
+			</line>
+		</band>
+	</title>
+	<summary>
+		<band height="382" splitType="Stretch">
+			<pieChart>
+				<chart evaluationTime="Report">
+					<reportElement x="0" y="0" width="555" height="382" uuid="857c7ab2-207a-41f5-a7f3-a7ea4fbb45f3"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<dataset resetType="Report"/>
+					<keyExpression><![CDATA[$F{Meal_Type}]]></keyExpression>
+					<valueExpression><![CDATA[$F{Quantity}]]></valueExpression>
+					<labelExpression><![CDATA[$F{Meal_Type}]]></labelExpression>
+				</pieDataset>
+				<piePlot labelFormat="" legendLabelFormat="{2}">
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+		</band>
+	</summary>
+</jasperReport>

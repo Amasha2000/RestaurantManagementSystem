@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1623.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TableDetailFormController">
+   <children>
+      <JFXButton fx:id="btnAddTable" alignment="CENTER" buttonType="RAISED" layoutX="146.0" layoutY="695.0" onAction="#addTableOnAction" prefHeight="76.0" prefWidth="294.0" ripplerFill="#d0d3d3" style="-fx-background-color: #10ac84;" text="Add New Table" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="25.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <Label alignment="CENTER" layoutX="-2.0" layoutY="-1.0" prefHeight="90.0" prefWidth="1629.0" style="-fx-background-color: #540775;" text="Manage Table Details" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="41.0" />
+         </font></Label>
+      <JFXButton fx:id="btnUpdateTable" buttonType="RAISED" layoutX="146.0" layoutY="835.0" onAction="#updateTableOnAction" prefHeight="76.0" prefWidth="294.0" style="-fx-background-color: #341f97;" text="Update Table Details" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="25.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <TableView fx:id="tblTable" layoutX="624.0" layoutY="287.0" prefHeight="733.0" prefWidth="945.0" stylesheets="@../assets/style/Style.css">
+        <columns>
+          <TableColumn fx:id="colTableNumber" prefWidth="178.0" text="Table Number" />
+          <TableColumn fx:id="colTableCode" prefWidth="298.0" text="Table Code" />
+            <TableColumn fx:id="colNumberOfSeats" prefWidth="256.0" text="Number Of Seats" />
+            <TableColumn fx:id="colDelete" prefWidth="212.0" text="Delete" />
+        </columns>
+      </TableView>
+      <AnchorPane layoutX="105.0" layoutY="167.0" prefHeight="68.0" prefWidth="408.0" style="-fx-border-width: 2; -fx-border-color: #273c75; -fx-border-radius: 8;">
+         <children>
+            <JFXTextField fx:id="txtTableNumber" alignment="CENTER" focusColor="WHITE" labelFloat="true" layoutX="13.0" layoutY="22.0" onKeyReleased="#tableCodeKeyReleased" prefHeight="38.0" prefWidth="385.0" unFocusColor="#ccc9c9">
+               <font>
+                  <Font name="Times New Roman Bold" size="21.0" />
+               </font></JFXTextField>
+            <Label layoutX="18.0" layoutY="-12.0" prefHeight="23.0" prefWidth="123.0" style="-fx-background-color: #ffffff;" text="Table Number" textFill="#2131a8">
+               <font>
+                  <Font name="Calibri Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="105.0" layoutY="319.0" prefHeight="68.0" prefWidth="408.0" style="-fx-border-width: 2; -fx-border-color: #273c75; -fx-border-radius: 8;">
+         <children>
+            <JFXTextField fx:id="txtTableCode" alignment="CENTER" focusColor="WHITE" labelFloat="true" layoutX="13.0" layoutY="23.0" onKeyReleased="#tableCodeKeyReleased" prefHeight="38.0" prefWidth="385.0" unFocusColor="#ccc9c9">
+               <font>
+                  <Font name="Times New Roman Bold" size="21.0" />
+               </font></JFXTextField>
+            <Label layoutX="18.0" layoutY="-12.0" prefHeight="23.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Table Code" textFill="#2131a8">
+               <font>
+                  <Font name="Calibri Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="105.0" layoutY="472.0" prefHeight="68.0" prefWidth="408.0" style="-fx-border-width: 2; -fx-border-color: #273c75; -fx-border-radius: 8;">
+         <children>
+            <JFXTextField fx:id="txtNumberOfSeats" alignment="CENTER" focusColor="WHITE" labelFloat="true" layoutX="12.0" layoutY="23.0" onKeyReleased="#tableCodeKeyReleased" prefHeight="38.0" prefWidth="385.0" unFocusColor="#ccc9c9">
+               <font>
+                  <Font name="Times New Roman Bold" size="21.0" />
+               </font></JFXTextField>
+            <Label layoutX="19.0" layoutY="-14.0" prefHeight="23.0" prefWidth="149.0" style="-fx-background-color: #ffffff;" text="Number Of Seats" textFill="#2131a8">
+               <font>
+                  <Font name="Calibri Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="624.0" layoutY="163.0" prefHeight="76.0" prefWidth="346.0" style="-fx-border-width: 2; -fx-border-color: #273c75; -fx-border-radius: 8;">
+         <children>
+            <JFXTextField fx:id="txtSearch" alignment="CENTER" focusColor="#613abc" labelFloat="true" layoutX="15.0" layoutY="30.0" onKeyReleased="#searchOnAction" prefHeight="38.0" prefWidth="313.0" promptText="Enter Table Number To Search" unFocusColor="#ccc9c9">
+               <font>
+                  <Font name="Calibri Bold" size="20.0" />
+               </font>
+            </JFXTextField>
+            <Label alignment="CENTER" layoutX="129.0" layoutY="-11.0" prefHeight="23.0" prefWidth="75.0" style="-fx-background-color: #ffffff;" text="Search" textFill="#2131a8">
+               <font>
+                  <Font name="Calibri Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <FontAwesomeIcon fill="WHITE" glyphName="PENCIL" layoutX="583.0" layoutY="54.0" size="2em" />
+      <ImageView fitHeight="140.0" fitWidth="149.0" layoutX="1367.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/image8.png" />
+         </image>
+      </ImageView>
+      <Separator layoutX="20.0" layoutY="42.0" prefHeight="4.0" prefWidth="530.0" />
+      <Separator layoutX="1012.0" layoutY="39.0" prefHeight="4.0" prefWidth="590.0" />
+   </children>
+</AnchorPane>

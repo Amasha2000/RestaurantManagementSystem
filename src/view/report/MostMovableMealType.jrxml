@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MostMovableMealType" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="703cd078-05b4-41d7-833b-7c9a748cd520">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="jdbc"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[SELECT mealType AS Meal_Type,SUM(quantity) AS quantity FROM orderdetail GROUP BY mealType ORDER BY quantity DESC]]>
+	</queryString>
+	<field name="Meal_Type" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="mealType"/>
+		<property name="com.jaspersoft.studio.field.label" value="Meal_Type"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orderdetail"/>
+	</field>
+	<field name="quantity" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="quantity"/>
+		<property name="com.jaspersoft.studio.field.label" value="quantity"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="92" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="30" width="555" height="50" forecolor="#9F23BA" uuid="fcb7bae4-daad-41b8-af22-4da737cc46e2"/>
+				<textElement textAlignment="Center">
+					<font size="25" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Most Movable Meal Type Details]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="84" width="555" height="1" forecolor="#AC61CF" uuid="b1add8cf-31f8-4a0e-a987-de27c1e2c676"/>
+			</line>
+			<image>
+				<reportElement x="500" y="21" width="50" height="50" uuid="7b307c41-d025-4df2-9273-614ca1bad2ce"/>
+				<imageExpression><![CDATA["C:/Users/Amasha/Desktop/GDSE -58/java fx/RestaurantManagementSystem/src/assets/image7.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="278" height="30" forecolor="#322AC7" backcolor="#D0D6D9" uuid="92577fba-b919-45e1-bb3a-cec94be49894">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="48012890-6904-4a1a-abfc-5b6df1ec3cdd"/>
+				</reportElement>
+				<box leftPadding="5">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Meal_Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="278" y="0" width="277" height="30" forecolor="#322AC7" backcolor="#D0D6D9" uuid="25d4cd99-a7b4-417e-8bf0-0b13edf5ee2d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1a434c68-4cb1-48f0-be60-5907f70ad0b5"/>
+				</reportElement>
+				<box leftPadding="5">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="278" height="30" uuid="4f719e8e-2db7-4c6d-8002-26369c24c7ff">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="48012890-6904-4a1a-abfc-5b6df1ec3cdd"/>
+				</reportElement>
+				<box leftPadding="5">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Meal_Type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="278" y="0" width="277" height="30" uuid="4508cdfa-4e19-4e21-8d3c-1520757aa0b0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1a434c68-4cb1-48f0-be60-5907f70ad0b5"/>
+				</reportElement>
+				<box leftPadding="5">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
