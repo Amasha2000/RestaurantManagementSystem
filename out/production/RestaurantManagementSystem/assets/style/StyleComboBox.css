@@ -1,9 +1,0 @@
-
-.combo-box-base:hover{
-    -fx-background-color:transparent,#6699FF,transparent,transparent,white;
-}
-
-.combo-box{
--fx-font-size:18;
--fx-font-weight: bold;
-}
